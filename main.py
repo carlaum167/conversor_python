@@ -31,4 +31,11 @@ def menu():
   escolha = input("Digite o número da operação desejada: ")
 
   if escolha == '1':
-      print("")
+      print("1. Celsius para Fahrenheit")
+      print("2. Farenheit para Celsius")
+      sub_escolha = input("Digite o numero da opção desejada ")
+      valor = float(input("Digite o valor a ser convertido "))
+      if sub_escolha == '1':
+          print(f"{valor}°C é equivalente a {celsius_para_fahrenheit(valor):.2f}°F")
+      elif sub_escolha == '2':
+          print(f"{valor}°F é equivalente a {fahrenheit_para_celsius(valor):.2f}°C")
