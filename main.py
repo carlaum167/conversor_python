@@ -24,71 +24,97 @@ def galoes_para_litros(galoes):
     return galoes / 0.264172
 #INVALID OPTION
 def invalid_option():
-    print("Opção invalida!   D:")
-    print("Deseja tentar novamente?")
-    print("1. SIM")
-    print("2. NÃO")
-    sub_escolha = input("Digite o numero da opção desejada ")
+    print("Invalid option!   D:")
+    print("Try again?")
+    print("1. YES")
+    print("2. NO")
+    sub_escolha = input("Enter the number of the desired option ")
     if sub_escolha == '1':
         return menu()
     elif sub_escolha == '2':
-        print("programa encerrado")
+        print("program closed")
+    else:
+        print("Invalid option, try again")
+        return invalid_option()
+
+#CONTINUATION
+def continuation():
+    print("___________________________________")
+    print("Do you want to return to the menu?")
+    print("1. YES")
+    print("2. NO")
+    sub_escolha = input("Enter the number of the desired option ")
+    if sub_escolha == '1':
+        return menu()
+    elif sub_escolha == '2':
+        print("program closed")
+    else:
+        print("Invalid option, try again!")
+        return continuation()
+
 
 def menu():
-  print("Escolha o tipo de conversão desejada:")
-  print("1. Temperatura")
-  print("2. Distância")
-  print("3. Peso")
-  print("4. Volume")
-  escolha = input("Digite o número da operação desejada: ")
+  print("Choose the desired option: ")
+  print("1. Temperature")
+  print("2. Distance")
+  print("3. Weight")
+  print("4. Bulk")
+  escolha = input("Enter the number of the desired operation: ")
 
   if escolha == '1':
-      print("1. Celsius para Fahrenheit")
-      print("2. Farenheit para Celsius")
-      sub_escolha = input("Digite o numero da opção desejada ")
-      valor = float(input("Digite o valor a ser convertido "))
+      print("1. Celsius to Fahrenheit")
+      print("2. Farenheit to Celsius")
+      valor = float(input("Enter the amount to be converted "))
+      sub_escolha = input("Enter the desired conversion number ")
       if sub_escolha == '1':
-          print(f"{valor}°C é equivalente a {celsius_para_fahrenheit(valor):.2f}°F")
+          print(f"{valor}°C is tantamount to {celsius_para_fahrenheit(valor):.2f}°F")
+          return continuation()
       elif sub_escolha == '2':
-          print(f"{valor}°F é equivalente a {fahrenheit_para_celsius(valor):.2f}°C")
-      elif sub_escolha != '1' or '2':
+          print(f"{valor}°F is tantamount to {fahrenheit_para_celsius(valor):.2f}°C")
+          return continuation()
+      else:
           return invalid_option()
 
   elif escolha == '2':
-      print("1. Quilômetros para Milhas")
-      print("2. Milhas para Quilômetros")
-      sub_escolha = input("Digite o numero da opção desejada ")
-      valor = float(input("Digite o valor a ser convertido "))
+      print("1. Kilometers to Miles")
+      print("2. Miles to Kilometers")
+      valor = float(input("Enter the amount to be converted "))
+      sub_escolha = input("Enter the desired conversion number ")
       if sub_escolha == '1':
-          print(f"{valor} KM é equivalente a {km_para_milha(valor):.2f} milhas")
+          print(f"{valor} KM is tantamount to {km_para_milha(valor):.2f} miles")
+          return continuation()
       elif sub_escolha == '2':
-          print(f"{valor} milhas é equivalente a {milha_para_km(valor):.2f} KM")
-      elif sub_escolha != '1' or '2':
+          print(f"{valor} miles is tantamount to {milha_para_km(valor):.2f} KM")
+          return continuation()
+      else:
           return invalid_option()
 
   elif escolha == '3':
-      print("1. Quilos para Libras")
-      print("2. Libras para Quilos")
-      sub_escolha = input("Digite o numero da opção desejada ")
-      valor = float(input("Digite o valor a ser convertido "))
+      print("1. Kilos to Pounds")
+      print("2. Pounds to Kilos")
+      valor = float(input("Enter the amount to be converted "))
+      sub_escolha = input("Enter the desired conversion number ")
       if sub_escolha == '1':
-          print(f"{valor}KG é equivalente a {kg_para_libras(valor):.2f} libras")
+          print(f"{valor}KG is tantamount to {kg_para_libras(valor):.2f} pounds")
+          return continuation()
       elif sub_escolha == '2':
-          print(f"{valor} libras é equivalente a {libras_para_kg(valor):.2f}KG")
-      elif sub_escolha != '1' or '2':
+          print(f"{valor} pounds is tantamount to {libras_para_kg(valor):.2f}KG")
+          return continuation()
+      else:
           return invalid_option()
 
-
   elif escolha == '4':
-      print("1. Litros para galões")
-      print("2. Galões para litros")
-      sub_escolha = input("Digite o numero da opção desejada ")
-      valor = float(input("Digite o valor a ser convertido "))
+      print("1. Liters to Gallons")
+      print("2. Gallons to Liters")
+      valor = float(input("Enter the amount to be converted "))
+      sub_escolha = input("Enter the desired conversion number ")
       if sub_escolha == '1':
-          print(f"{valor} litros é equivalente a {litros_para_galoes(valor):.2f} galões")
+          print(f"{valor} liters is tantamount to {litros_para_galoes(valor):.2f} gallons")
+          return continuation()
       elif sub_escolha == '2':
-          print(f"{valor} litros é equivalente a {galoes_para_litros(valor):.2f} litros")
-      elif sub_escolha != '1' or '2':
+          print(f"{valor} gallons is tantamount to {galoes_para_litros(valor):.2f} liters")
+          return continuation()
+      else:
           return invalid_option()
 
   else:
